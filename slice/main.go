@@ -1,0 +1,202 @@
+package main
+
+import (
+	"fmt"
+)
+
+/*
+1)切片是引用类型
+2)切片是一个拥有相同类型元素的可变长度的序列，只能通过append函数来改变切片长度【改变长度即插入和删除元素】。
+3)切片只能通过append函数进行插入和扩容 append函数先扩容再追加
+5）append函数返回值是切片类型的数据(切片类型的数据保存在堆中，切片类型的变量保存的是一个地址)，它会复制之前切片的数据并和我们要插入的数据一并作为返回值 用之前的切片名(切片变量)来保存它的地址会把之前的地址覆盖掉 这样就成了一个新切片
+6)切片的索引(下标)为0-n
+7)切片类型的变量保存的是一个地址 这个地址指向的是它在堆中存放数据的空间
+虽然引用类型的变量中存放的是一个地址，但要输出它在堆中的数据 直接默认输出即可
+系统会自动取值不需要用*来取值 若想输出此地址 用Printf("%p",变量名)
+a := make([]int, 10) //切片make之后才会输出默认值 这是一个长度为10 元素的值都是0的切片
+fmt.Println(a)
+只有对切片名、map名取地址、取值(不可以对切片和map类型的变量取值)以及传参 切片名之间、map名之间相互赋值不是对堆里的空间进行操作 其他的操作对切片名和map名操作就是对堆中的空间进行操作 不要考虑对切片名和map名进行取值操作的任何事
+*/
+func main() {
+	fmt.Println("ok")
+	/*
+						var slice []int   //定义一个空切片【空切片是对应变量的值为nil(0X0)的切片】 此时变量slice里保存的值为nil(0X0) 此时切片长度为0【因为没有在堆中开辟空间所以长度为0】 容量为0 不能通过slice[0] = 1这样的方式 因为此时切片长度为0，只有长度不为0时才能通过slice[0] = 1这样的方式 此时输出slice[0]同理 此时得用make函数设置长度【就是用make函数在堆中开辟空间，注意：切片使用make函数是必须设置长度，容量可写可不写】 就可以用slice[0] = 1这样的方式了
+						fmt.Println(slice) //
+
+						var slice2 = []int{1, 2, 3, 4, 5}
+						fmt.Println(slice2, len(slice2))
+
+						var slice3 = []int{1: 2, 2: 4, 3: 6}
+						fmt.Println(slice3)
+
+						slice4 := []int{1, 2, 3, 4}
+						fmt.Println(slice4)
+						slice5 := []int{0: 1, 1: 2, 2: 3}
+						fmt.Println(slice5)
+
+						//基于数组定义切片
+						a := [5]int{55, 56, 57, 58, 59}
+						b := a[:] //获取数组里的所有的元素的值
+						fmt.Println(b)
+
+						c := a[1:4] //获取数组里的指定的元素的值   左包右不包
+						fmt.Println(c)
+						d := a[2:] //从数组索引(下标)为2的元素开始获取全部
+						fmt.Println(d)
+						e := a[:3] //获取数组下标为3的元素前面的元素的值
+						fmt.Println(e)
+
+						//基于切片定义(声明)切片
+						a := []string{"北京", "上海", "广州", "深圳", "成都", "重庆"}
+						b := a[1:] //从切片下标为1的元素开始获取全部
+						fmt.Println(b)
+							.........
+				        //通过make函数定义(声明)切片  make([]T,size,cap)
+						var sliceA = make([]int,4,8)   //长度为4 容量为8的空切片
+						fmt.Println(sliceA)    //会输出默认值
+						sliceA[0] = 10
+						sliceA[1] = 12
+						sliceA[2] = 10
+						sliceA[3] = 30
+						fmt.Println(sliceA)
+
+		fmt.Println("----------------------------------------")
+						sliceB := []string{"php","java","go"}
+						sliceB[2] = "golang"
+						fmt.Println(sliceB)    //输出["php","java","golang"]
+
+						//append函数
+						var sliceB []int
+						var sliceE []int
+						sliceB = append(sliceB,3)
+						sliceE = append(sliceE,3,4,5,6,3)  //append函数可以追加1个或多个元素
+						fmt.Println(len(sliceB))
+						fmt.Println(len(sliceE))
+
+						//append函数还可以和并切片
+						sliceC := []string{"php","java"}
+						sliceD := []string{"nodejs","go"}
+						sliceC = append(sliceC,sliceD...)   //append的第二个参数不能是切片的，这个地方是把sliceD打散 追加到sliceC里面的 和sliceC = append(sliceC,"nodejs","go")等价
+						fmt.Println(sliceC)
+
+						//切片的扩容策略(了解)
+						var sliceE []int
+						for i := 0;i<10;i++{
+							sliceE = append(sliceE,i)
+							fmt.Println(sliceE,"长度",len(sliceE),"容量",cap(sliceE))
+						}
+						//copy()函数
+						sliceA := []int{1, 2, 3, 4, 5}
+						sliceB := make([]int, 4, 4)
+						copy(sliceB, sliceA) //copy函数的作用是让身为引用类型的切片也可以进行类似于值传递的操作
+						sliceB[0] = 11
+						fmt.Println(sliceA)
+						fmt.Println(sliceB)
+
+						//删除切片中的元素
+						a := []int{1, 2, 3, 4, 5, 6, 7}
+						a = append(a[:2], a[3:]...)
+						fmt.Println(a) //输出[1,2,4,5,6,7]
+
+						//利用切片修改字符串
+						s1 := "big"
+						byteStr := []byte(s1)
+						byteStr[0] = 'p'
+						fmt.Println(string(byteStr))
+
+	*/
+
+	/*
+		//关于切片的长度和容量
+		//切片的长度即为其所保存的元素个数
+		//切片的容量需要重视
+		//切片的容量是从它的第一个元素开始数到其底层切片元素末尾（包含末尾）的元素个数
+		//以b := s[1:3]为例 切片b的第一个元素是下标为1的元素 此元素到切片s的末尾的元素的个数为5
+		//切片变量也是切片名
+		s := []int{2, 3, 5, 7, 11, 13}  //长度为6 容量为6
+		fmt.Println("长度为", len(s), "容量为", cap(s))
+
+		a := s[2:]
+		fmt.Println("长度为", len(a), "容量为", cap(a))
+
+		b := s[1:3]
+		fmt.Println("长度为", len(b), "容量为", cap(b))
+		e := s[4:]
+		fmt.Println("容量为", cap(e))
+	*/
+	/*
+		//切片的循环遍历
+		var strSlice = []string{"济南", "北京", "上海", "南京", "深圳"}
+		for i := 0; i < len(strSlice); i++ {
+			fmt.Println(i, strSlice[i])
+		}
+		for i, v := range strSlice {
+			fmt.Println(i, v)
+		}
+	*/
+	/*
+		//选择排序
+		var numSlice = []int{9, 8, 7, 6, 5, 4}
+		//var numSlice = []string{"a", "d", "e", "g", "c"}
+		for i := 0; i < len(numSlice); i++ {
+			for j := i + 1; j < len(numSlice); j++ {
+				if numSlice[i] > numSlice[j] {
+					temp := numSlice[i]
+					numSlice[i] = numSlice[j]
+					numSlice[j] = temp
+				}
+			}
+		}
+		fmt.Println(numSlice)
+	*/
+	/*
+		//冒泡排序
+		var numSlice = []int{9, 6, 5, 3, 8}
+		//var numSlice = []string{"a", "d", "e", "g", "c"}
+		for i := 0; i < len(numSlice); i++ {
+			for j := 0; j < len(numSlice)-1-i; j++ {
+				if numSlice[j] > numSlice[j+1] {
+					temp := numSlice[j]
+					numSlice[j] = numSlice[j+1]
+					numSlice[j+1] = temp
+				}
+			}
+		}
+		fmt.Println(numSlice)
+	*/
+	/*
+				使用sort包进行升序排序
+				对于int、float64和string数组或是切片的排序，go分别提供了sort.Ints()、sort.Float64s()和sort.Strings()函数，默认都是从小到大排列
+
+			intList := []int{2, 4, 3, 5, 7, 6, 9, 8, 1, 0}
+			floatList := []float64{4.2, 5.9, 12.4, 10.2, 50.7, 99.9, 31.4, 27.81828, 3.14}
+			strList := []string{"a", "c", "b", "z", "x", "w", "y", "d", "f", "i"}
+			fmt.Println("排序前")
+			fmt.Println(intList)
+			fmt.Println(floatList)
+			fmt.Println(strList)
+			sort.Ints(intList)
+			sort.Float64s(floatList)
+			sort.Strings(strList)
+			fmt.Println("排序后")
+			fmt.Println(intList)
+			fmt.Println(floatList)
+			fmt.Println(strList)
+
+		// 使用sort包进行降序排序
+		intList1 := []int{2, 4, 3, 5, 7, 6, 9, 8, 1, 0}
+		floatList1 := []float64{4.2, 5.9, 12.4, 10.2, 50.7, 99.9, 31.4, 27.81828, 3.14}
+		strList1 := []string{"a", "c", "b", "z", "x", "w", "y", "d", "f", "i"}
+		fmt.Println("排序前")
+		fmt.Println(intList1)
+		fmt.Println(floatList1)
+		fmt.Println(strList1)
+		sort.Sort(sort.Reverse(sort.IntSlice(intList1)))
+		sort.Sort(sort.Reverse(sort.Float64Slice(floatList1)))
+		sort.Sort(sort.Reverse(sort.StringSlice(strList1)))
+		fmt.Println("排序后")
+		fmt.Println(intList1)
+		fmt.Println(floatList1)
+		fmt.Println(strList1)
+	*/
+}

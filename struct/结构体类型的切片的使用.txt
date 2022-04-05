@@ -1,0 +1,42 @@
+package main
+
+import "fmt"
+//结构体类型的切片的使用
+type Teacher struct {
+	Project string
+	Sex     string
+}
+type Student struct {
+	Id     int
+	Gender string
+	Name   string
+}
+type Class struct {
+	Title   string
+	Teacher Teacher
+	Student []Student
+}
+
+func main() {
+	fmt.Println("ok")
+	var c1 = Class{
+		Title: "第一个学生",
+		Teacher: Teacher{
+			Project: "物理",
+			Sex:     "女",
+		},
+		Student: []Student{
+			{
+				Id:     1,
+				Gender: "男",
+				Name:   "狗子",
+			},
+			{
+				Id:     2,
+				Gender: "女",
+				Name:   "狗子2",
+			},
+		},
+	}
+	fmt.Println(c1)
+}

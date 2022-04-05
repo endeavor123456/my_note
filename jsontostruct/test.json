@@ -1,0 +1,59 @@
+{
+    "job": {
+      "setting": {
+        "speed": {
+          "byte": 1048576
+        },
+        "errorLimit": {
+          "record": 0,
+          "percentage": 0.02
+        }
+      },
+      "content": [   /*切片左边还有字段名"content"说明外面还有一层结构体包裹他*/
+        {
+          "reader": {  //这个结构体的字段名是reader和字段名为writer的结构体的的属性一样但是他们的字段名不一样得写成两个结构体 如果括弧左边没字段名就可以写成结构体类型切片了
+            "name": "postgresqlreader",
+            "parameter": {
+              "username": "postgres",
+              "password": "postgres",
+              "column": [
+                "*"
+              ],
+              "splitPk": "id",
+              "connection": [
+                {
+                  "jdbcUrl": [
+                    "jdbc:postgresql://127.0.0.1:5432/flora-study"
+                  ],
+                  "table": [
+                    "dash_menu"
+                  ]
+                }
+              ]
+            }
+          },
+          "writer": {
+            "name": "postgresqlwriter",
+            "parameter": {
+              "username": "postgres",
+              "password": "postgres",
+              "column": [
+                "*"
+              ],
+              "splitPk": "id",
+              "connection": [
+                {
+                  "jdbcUrl": [
+                    "jdbc:postgresql://127.0.0.1:5432/jackal"
+                  ],
+                  "table": [
+                    "dash_menu"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }

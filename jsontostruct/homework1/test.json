@@ -1,0 +1,28 @@
+[  //如果这个切片有字段名则要在外层嵌套一层结构体
+	{
+		name: {
+			"lastname": "李",
+			"firstname": "二"
+		},
+        age: 24,
+        weight: 70.4,
+        message: [
+            "Good morning.",
+            "How are you?",
+            "Nice to meet you."
+        ]
+	},
+    {
+		name: {
+			"lastname": "王",
+			"firstname": "五"
+		},
+        age: 33,
+        weight: 80.3,
+        message: [
+            "Good morning.",
+            "How are you?",
+            "Nice to meet you."
+        ]
+	}
+]
