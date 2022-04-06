@@ -38,7 +38,9 @@ func main() {
 		fmt.Println("-----------------------------")
 		var a1 int
 		var c *int = &a1 //&a1是取变量a1的地址
-		fmt.Println(*c)  //*c是对变量里存储的地址进行取值
+		fmt.Println(*c)  //*c就是变量a1
+		var c1 = c   //*c1也是变量a1
+		fmt.Println(*c1)
 		fmt.Println("------------------------------")
 	*/
 	/*
