@@ -50,7 +50,7 @@ func main() {
 						b := a[1:] //从切片下标为1的元素开始获取全部
 						fmt.Println(b)
 							.........
-				        //通过make函数定义(声明)切片  make([]T,size,cap)
+				        //通过make函数定义切片  make([]T,size,cap)
 						var sliceA = make([]int,4,8)   //长度为4 容量为8的空切片
 						fmt.Println(sliceA)    //会输出默认值
 						sliceA[0] = 10
