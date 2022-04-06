@@ -78,7 +78,7 @@ func main() {
 						sliceC = append(sliceC,sliceD...)   //append的第二个参数不能是切片的，这个地方是把sliceD打散 追加到sliceC里面的 和sliceC = append(sliceC,"nodejs","go")等价
 						fmt.Println(sliceC)
 
-						//切片的扩容策略(了解)
+						//切片的扩容策略【对于切片的扩容策略只需了解即可】
 						var sliceE []int
 						for i := 0;i<10;i++{
 							sliceE = append(sliceE,i)
