@@ -9,7 +9,7 @@ func 函数名(形参变量名1 类型,形参变量名2 类型,形参变量名3 
 	return 变量或者返回值或表达式/只写return/没有返回值(没有return)
 }
 函数名是一个特殊的全局变量 特殊在定义方式不一样
-//返回值函数可以有多个返回值
+//返回值函数可以返回多个返回值
 func result(a, b int) int {   //a, b int其实是var a, b int   传参其实就是初始化即var a int = 传过来的值
 	return a + b  //return 表达式  表示返回表达式 a+b的结果
 }

@@ -29,5 +29,5 @@ func main() {
 	fmt.Println(res1)
 	fmt.Println("-----------------------------------------------")
 	fmt.Println(returnStruct())
-	fmt.Println(returnStruct().name)
+	fmt.Println(returnStruct().name) //表示
 }
