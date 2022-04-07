@@ -8,14 +8,15 @@ func main2() {
 		fmt.Println(a + b)
 	}
 	/*
-		匿名函数是特殊的函数 特殊在......
-		f := func(a int, b int) {
-			fmt.Println(a + b)
-		}
-		匿名函数就是没有函数名的函数 这段代码就是给匿名函数起了个函数名
-		这一段代码可以理解为func f(a int,b int){
-			fmt.Println(a+b)
-		}  但是二者不等价
+		先这样理解 后期还要更改
+			匿名函数是特殊的函数 特殊在......
+			f := func(a int, b int) {
+				fmt.Println(a + b)
+			}
+			匿名函数就是没有函数名的函数 这段代码就是给匿名函数起了个函数名
+			这一段代码可以理解为func f(a int,b int){
+				fmt.Println(a+b)
+			}  但是二者不等价
 	*/
 	fmt.Println(f)
 	f(1, 5)
@@ -27,7 +28,7 @@ func main2() {
 	fmt.Println("------------------------------")
 	c := 10
 	d := 20
-	//此处变量v保存的是此匿名函数的返回值 所以得是有参数和返回值才行
+	//此处变量v保存的是此匿名函数的返回值
 	v := func(c int, d int) int {
 		return c + d
 	}(c, d) //如果声明匿名函数时{}后面有()表示函数调用 后面的()用来传参
