@@ -13,23 +13,24 @@ func main() {
 	var m = make(map[string]int) //该map的key是string类型的，value是int类型的 map中的key-value对是无序的
 	fmt.Println(m)
 	/*
-	   课堂练习
-	   存放3个学生的信息，每个学生有max和sex信息
-	*/
-	studentMap := make(map[string]map[string]string)
-	studentMap["stu01"] = make(map[string]string)
-	studentMap["stu01"]["name"] = "tom"
-	studentMap["stu01"]["sex"] = "男"
-	studentMap["stu01"]["address"] = "北京长安街"
+		   课堂练习
+		   存放3个学生的信息，每个学生有max和sex信息
 
-	studentMap["stu02"] = make(map[string]string)
-	studentMap["stu02"]["name"] = "mary"
-	studentMap["stu02"]["sex"] = "女"
-	studentMap["stu02"]["address"] = "上海黄浦江"
-	fmt.Println(studentMap)
-	fmt.Println(studentMap)
-	fmt.Println(studentMap["stu02"])
-	fmt.Println(studentMap["stu02"]["address"])
+		studentMap := make(map[string]map[string]string)
+		studentMap["stu01"] = make(map[string]string)
+		studentMap["stu01"]["name"] = "tom"
+		studentMap["stu01"]["sex"] = "男"
+		studentMap["stu01"]["address"] = "北京长安街"
+
+		studentMap["stu02"] = make(map[string]string)
+		studentMap["stu02"]["name"] = "mary"
+		studentMap["stu02"]["sex"] = "女"
+		studentMap["stu02"]["address"] = "上海黄浦江"
+		fmt.Println(studentMap)
+		fmt.Println(studentMap)
+		fmt.Println(studentMap["stu02"])
+		fmt.Println(studentMap["stu02"]["address"])
+	*/
 	//如果map的某一个key已经存在，则为修改 不存在则为增加  例：cities["no3"]="上海" 如果"no3"这个key已经存在 则该语句为修改 如果不存在则为增加
 	var kong map[string]int //此时没有在堆中开辟空间所以不能往里添加key-value对
 	kong = m                //将变量m的值赋值给变量kong     变量m中存储的值是一个地址  指向堆中空间的地址
