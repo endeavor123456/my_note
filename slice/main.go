@@ -51,7 +51,7 @@ func main() {
 						fmt.Println(b)
 							.........
 				        //通过make函数定义切片  make([]T,size,cap)
-						var sliceA = make([]int,4,8)   //长度为4 容量为8的空切片
+						var sliceA = make([]int,4,8)   //长度为4 容量为8的空切片 对切片使用make函数时size必须写，cap可省略 如果是对map使用make函数 size和cap都可省略
 						fmt.Println(sliceA)    //会输出默认值
 						sliceA[0] = 10
 						sliceA[1] = 12
@@ -75,7 +75,7 @@ func main() {
 						//append函数还可以和并切片
 						sliceC := []string{"php","java"}
 						sliceD := []string{"nodejs","go"}
-						sliceC = append(sliceC,sliceD...)   //append的第二个参数不能是切片的，这个地方是把sliceD打散 追加到sliceC里面的 和sliceC = append(sliceC,"nodejs","go")等价
+						sliceC = append(sliceC,sliceD...)   //append的第二个参数不能是切片名，这个地方是把sliceD打散 追加到sliceC里面的 和sliceC = append(sliceC,"nodejs","go")等价
 						fmt.Println(sliceC)
 
 						//切片的扩容策略【对于切片的扩容策略只需了解即可】
