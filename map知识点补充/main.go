@@ -33,7 +33,7 @@ func main() {
 	*/
 	//如果map的某一个key已经存在，则为修改 不存在则为增加  例：cities["no3"]="上海" 如果"no3"这个key已经存在 则该语句为修改 如果不存在则为增加
 	var kong map[string]int //此时没有在堆中开辟空间所以不能往里添加key-value对
-	kong = m                //将变量m的值赋值给变量kong     变量m中存储的值是一个地址  指向堆中空间的地址
+	kong = m                //将变量m的值赋值给变量kong     变量m中存储的值是一个地址  这个地址指向堆中空间
 	fmt.Println(m)
 	fmt.Println(kong)
 	//var m = make(map[string]int)不是空map var kong map[string]int才是 判定切片、map是否为空的标准是看看其变量的值是否为nil
