@@ -2,9 +2,12 @@ package main
 
 import "fmt"
 
+/*
+如果在函数执行中遇到return，return后面的代码不会再被执行 函数会提前执行结束 如果函数执行中没遇到return则函数会在执行完之后再结束
+*/
 func test5(a int, b int) int {
 	sum := a + b //这个地方的a和b已经在上面定义了a int, b int
-	return sum   //return表示函数的结束 如果在函数中return之后还有代码则不会执行
+	return sum   //return sum 表示返回变量sum里的值，此时变量sum里的值就是返回值 return表示函数的结束 如果在函数中return之后还有代码则不会执行
 }
 
 /*
