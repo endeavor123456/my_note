@@ -39,5 +39,10 @@ func main() {
 	//var m = make(map[string]int)不是空map var kong map[string]int才是 判定切片、map是否为空的标准是看看其变量的值是否为nil
 
 	//map删除key-value对
-
+	var m5 = map[string]string{
+		"name": "狗子3号",
+		"sex":  "男",
+	}
+	delete(m5, "sex")   //删除key为"sex"的kay-value对
+	delete(m5, "calss") //删除key为"class"的kay-value对 当key为"class"的kay-value对不存在时 delete函数不会进行删除操作，也不会报错
 }
