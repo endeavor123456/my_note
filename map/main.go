@@ -16,6 +16,15 @@ func main() {
 			fmt.Println(userInfo1)
 			fmt.Println(userInfo1["sex"])
 
+			//上面那段代码是此段代码的简写
+			var userInfo1 map[string]string = map[string]string{
+					"username": "张三",
+					"age":      "20",
+					"sex":      "男", //注意这个地方也有逗号
+			}
+			fmt.Println(userInfo1)
+			fmt.Println(userInfo1["sex"])
+
 			//使用make()创建map   数组变量可以用“var arr [2]int”这种方式方式定义、切片变量可以用“var slice []int”这种方式定义，map变量虽然也可以“var userInfo map[string]string”这样定义 但是没啥意义 因为除会输出map[]之外啥也做不了
 			var userInfo = make(map[string]string) //map对长度没要求
 			userInfo["username"] = "张三"
