@@ -22,6 +22,11 @@ func main33() {
 		Person{"狗子"}为Person类型的数据 是一组字段的值的集合 不是字段的集合 结构体变量才是字段的集合
 		fmt.Println([]any{1, 2, 3}[0])       //表示输出[]int{1, 2, 3}这个集合里保存在第一个元素里的值
 		fmt.Println(res{10, "狗子", "男"}.name) //表示输出res{10, "狗子", "男"}这个集合里保存在字段name里的值
+		map[string]string{
+		"username": "张三",
+		"age":      "20",
+		"sex":      "男",
+		}  这是map[string]string类型的数据 (值) 是一组无序的key-value对的集合
 	*/
 	var slice = []int{1, 2, 3}
 	fmt.Println(slice)

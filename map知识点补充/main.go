@@ -38,10 +38,6 @@ func main() {
 	fmt.Println(kong)
 	//var m = make(map[string]int)不是空map var kong map[string]int才是 判定切片、map是否为空的标准是看看其变量的值是否为nil
 
-	// map[string]string{
-	// 	"username": "张三",
-	// 	"age":      "20",
-	// 	"sex":      "男",
-	// }  这是map[string]string类型的数据 (值) 是一组无序的key-value对的集合
+	//map删除key-value对
 
 }
