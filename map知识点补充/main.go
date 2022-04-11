@@ -45,4 +45,11 @@ func main() {
 	}
 	delete(m5, "sex")   //删除key为"sex"的kay-value对
 	delete(m5, "calss") //删除key为"class"的kay-value对 当key为"class"的kay-value对不存在时 delete函数不会进行删除操作，也不会报错
+
+	/*	删除map变量所有key-value对
+		1）如果我们要删除map变量里的所有key-value，没有一个专门的方法一次性删除多个key-value对 可以遍历一下 逐个删除
+		2）使用map变量=make(...),在堆中开辟一个新的空间，让原来的那个空间成为垃圾，被gc回收
+
+	*/
+
 }
