@@ -67,5 +67,16 @@ func main() {
 		d = make(map[string]string) //在堆中开辟一个新的空间，让原来的那个空间成为垃圾，被gc回收
 		fmt.Println(d)
 	*/
-
+	fmt.Println("----------------------------------------")
+	//map查找
+	var d3 = map[string]string{
+		"name": "狗子8号",
+		"addr": "翻斗花园103室",
+	}
+	val, ok := d3["age"] //如果d3中存在key为"age"的key-value对，ok的值就为true，如果不存在ok的值就为false
+	if ok {
+		fmt.Println(`d3中存在key为"age"的key-value对,value为：`, val)
+	} else {
+		fmt.Println("不存在")
+	}
 }
