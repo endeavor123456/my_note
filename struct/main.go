@@ -22,6 +22,13 @@ type 类型名 struct{
 }
 */
 /*
+如果结构体字段的字段类型相同可以写在一行
+type Person struct {
+	name,city string
+	age int
+}
+*/
+/*
 关于结构体类型变量的强制类型转换 类型Student类型和Student1类型虽然不是同一类型但是真正的类型相同 所以Student和Student1类型的变量可以进行强制数据类型转换
 type Student struct {
 	id    int
