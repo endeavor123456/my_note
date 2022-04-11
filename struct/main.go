@@ -20,6 +20,8 @@ type 类型名 struct{
 	字段名1 字段类型  //在结构体中字段名必须唯一
 	字段名2 字段类型
 }
+*/
+/*
 关于结构体类型变量的强制类型转换 类型Student类型和Student1类型虽然不是同一类型但是真正的类型相同 所以Student和Student1类型的变量可以进行强制数据类型转换
 type Student struct {
 	id    int
