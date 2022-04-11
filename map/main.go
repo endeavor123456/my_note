@@ -74,8 +74,6 @@ func main() {
 		userInfo[1]["age"] = "15"
 		userInfo[1]["height"] = "175cm"
 		fmt.Println(userInfo)
-
-		//创建map类型的切片(元素为map[string]string类型的切片)[代码简化版本:以后解决]
 	*/
 	/*
 		//遍历map类型的切片
