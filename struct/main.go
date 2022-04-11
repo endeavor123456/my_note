@@ -20,7 +20,7 @@ type 类型名 struct{
 	字段名1 字段类型  //在结构体中字段名必须唯一
 	字段名2 字段类型
 }
-关于结构体类型变量的强制类型转换 类型Student类型和Student1类型虽然不是同一类型但是真正的类型相同 所以Student和Student1类型的变量之间可以进行强转
+关于结构体类型变量的强制类型转换 类型Student类型和Student1类型虽然不是同一类型但是真正的类型相同 所以Student和Student1类型的变量可以进行强制数据类型转换
 type Student struct {
 	id    int
 	name  string
@@ -33,6 +33,16 @@ type Student1 struct{
 	age int
 	sex string
 }
+func main(){
+var Stu Student
+	var Stu1 Student1
+	Stu.age=10
+	Stu.id=1
+	Stu.name="狗子5号"
+	Stu.sex="男"
+	fmt.Println(Stu)
+	Stu1 = Student1(Stu)
+	fmt.Println(Stu1)
 */
 type Student struct { //定义一个类型名为Student的结构体类型
 	id    int
