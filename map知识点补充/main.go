@@ -9,12 +9,16 @@ type Int = int
 //map对长度不敏感
 func main() {
 	//map的key的类型不能是切片、map、function类型
+	/*
+		map变量的定义格式之一，只列出这一个，其他的定义格式就不一一列举了
+		var map名 = make(map[key的类型]value的类型)
+	*/
 	//map、切片类型的比较 详见golang中的比较注意事项.md
-	var m = make(map[string]int) //该map的key是string类型的，value是int类型的 map中的key-value对是无序的
+	var m = make(map[string]int) //map变量中的key-value对是无序的
 	fmt.Println(m)
 	/*
 		   课堂练习
-		   存放3个学生的信息，每个学生有max和sex信息
+		   存放3个学生的信息，每个学生有max和sex信息，并遍历出来
 
 		studentMap := make(map[string]map[string]string)
 		studentMap["stu01"] = make(map[string]string)
@@ -30,6 +34,14 @@ func main() {
 		fmt.Println(studentMap)
 		fmt.Println(studentMap["stu02"])
 		fmt.Println(studentMap["stu02"]["address"])
+		for k1,v1 := range studentMap{  //使用for-range遍历
+			fmt.Println("k1=",k1)
+			for k2,v2:=range v1{
+				fmt.Printf("\t k2=%v v2 = %v\n",k2,v2)
+			}
+			fmt.Println()
+		}
+
 	*/
 	//如果map的某一个key已经存在，则为修改 不存在则为增加  例：cities["no3"]="上海" 如果"no3"这个key已经存在 则该语句为修改 如果不存在则为增加
 	var kong map[string]int //此时没有在堆中开辟空间所以不能往里添加key-value对
