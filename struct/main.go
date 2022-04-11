@@ -4,7 +4,7 @@ import "fmt"
 
 //结构体是一种用户自定义类型 是使用type和struct关键字定义的【使用type和struct关键字定义的类型统称为结构体类型】 可以叫他结构体、也可以叫他结构体类型
 //结构体是值类型
-//type关键字在函数外部使用
+//type关键字在函数外部使用 golang中的关键字在vscode中显示为蓝色
 //使用type关键字时 类型名、类型别名不能与当前包已经存在的类型名重复
 //类型名小写只能在当前包里使用 大写则能在整个项目里使用
 //类型名大写时，字段名首字母大写该字段才能被别的包使用,否则只能在当前包使用
@@ -20,7 +20,7 @@ type 类型名 struct{
 	字段名2 字段类型
 }
 */
-type Student struct {
+type Student struct { //定义一个类型名为Student的结构体类型
 	id    int
 	name  string
 	age   int
@@ -28,6 +28,7 @@ type Student struct {
 	score int
 	addr  string
 }
+type Int int //定义一个类型名为Int的整数类型
 type Person struct {
 	name string
 	age  int
