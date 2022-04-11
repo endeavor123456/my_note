@@ -5,7 +5,7 @@ import "fmt"
 //golang中的类型按照定义的角色不同可分为用户自定义类型和系统类型 用户自定义类型即用户使用type关键字定义的类型 系统类型即系统使用type关键字定义的类型
 //结构体是一种用户自定义类型【用户使用type关键字定义的类型】 是使用type和struct关键字定义的【使用type和struct关键字定义的类型统称为结构体类型】 可以叫他结构体、也可以叫他结构体类型
 //结构体是值类型
-//type关键字在函数外部使用 golang中的关键字在vscode中显示为蓝色
+//type关键字在函数外部使用 golang中的关键字在vscode中显示为蓝色 类型定义之后就用类型名代表该真正的类型 所以类型名不同则类型不同 对于类型名不同 真正的类型相同可以理解成虽然二者的真正的类型是相同的但不是同一个个体 可以类比一下两个相同的硬币虽然两个硬币相同但是二者不是同一个硬币
 //类型名、类型别名不能与当前包已经存在的类型名重复
 //类型名小写只能在当前包里使用 大写则能在整个项目里使用
 //类型名大写时，字段名首字母大写该字段才能被别的包使用,否则只能在当前包使用
@@ -19,6 +19,19 @@ import "fmt"
 type 类型名 struct{
 	字段名1 字段类型  //在结构体中字段名必须唯一
 	字段名2 字段类型
+}
+关于结构体类型变量的强制类型转换 类型Student类型和Student1类型虽然不是同一类型但是真正的类型相同 所以Student和Student1类型的变量之间可以进行强转
+type Student struct {
+	id    int
+	name  string
+	age   int
+	sex   string
+}
+type Student1 struct{
+	id int
+	name string
+	age int
+	sex string
 }
 */
 type Student struct { //定义一个类型名为Student的结构体类型
@@ -43,7 +56,7 @@ type Monster struct {
 func main() {
 	fmt.Println("ok")
 	/*
-		实例化结构体(即定义一个对象 即：一个该结构体名类型的变量(结构体变量)并赋值)
+		实例化结构体(即定义一个对象 即：一个该结构体类型的变量(结构体变量)并赋值)
 		var p1 Person //声明一个Person类型的变量(结构体变量)   var p2 []Person  定义一个结构体切片类型的变量
 		p1.name = "狗子1号"
 		p1.sex = "男"
