@@ -86,7 +86,7 @@ func main() {
 			"addr": "翻斗花园103室",
 		}
 		//map查找第一种写法
-		val, ok := d3["age"] //如果d3中存在key为"age"的key-value对，ok的值就为true，如果不存在ok的值就为false
+		val, ok := d3["age"] //如果d3中存在key为"age"的key-value对，ok的值就为true，如果不存在ok的值就为false    ？？？这个地方有些别扭
 		if ok {
 			fmt.Println(`d3中存在key为"age"的key-value对,value为：`, val)
 		} else {
