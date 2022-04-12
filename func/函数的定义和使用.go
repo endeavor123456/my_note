@@ -16,11 +16,11 @@ func result(a, b int) int {   //a, b int其实是var a, b int   传参其实就�
 }
 func result(a, b int) int {
 	sum:= a + b
-	return sum  //return 变量    //表示返回变量sum里的值，此时变量sum里的值就是返回值
+	return sum  //return 变量    //表示结束函数result并返回变量sum里的值，此时变量sum里的值就是返回值
 }
 func result(a, b int) (sum int) {//sum int其实是var sum int
 	sum = a + b
-	return //只写return    //表示返回返回值参数变量的值，此时变量sum里的值就是返回值
+	return //只写return    //表示结束函数result并返回返回值参数变量的值，此时变量sum里的值就是返回值
 }
 func result() int {
 	return "狗子3号"  //return 返回值
