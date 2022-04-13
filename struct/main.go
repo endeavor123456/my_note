@@ -72,6 +72,7 @@ type Monster struct {
 	Age  int    `json:"年龄"`
 }
 
+//字段类型为函数类型的结构体可以写一下
 func main() {
 	fmt.Println("ok")
 	/*
