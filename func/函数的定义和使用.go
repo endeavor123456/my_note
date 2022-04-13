@@ -2,12 +2,33 @@ package main
 
 import "fmt"
 
-//函数声明格式
+//函数声明的几种格式
 /*
-func 函数名(形参变量名1 类型,形参变量名2 类型,形参变量名3 类型,.../形参变量名1,形参变量名2,... 类型)(返回值类型1,返回值类型2,.../返回值参数名 类型){
-	代码体
-	return 变量或者返回值或表达式/只写return/没有返回值(没有return)
-}
+func 函数名() 返回值类型 {
+		代码体
+		return 变量或者值(数据)或表达式
+	}
+func 函数名() (返回值类型,返回值类型,....){
+		代码体
+		return 变量或者值(数据)或表达式
+	}
+func 函数名(形参变量名1 类型,形参变量名2 类型,形参变量名3 类型,.../形参变量名1,形参变量名2,... 类型) 返回值类型 {
+				代码体
+				return 变量或者值(数据)或表达式
+	}
+func 函数名(形参变量名1 类型,形参变量名2 类型,形参变量名3 类型,.../形参变量名1,形参变量名2,... 类型) (返回值类型,返回值类型,....){
+		代码体
+		return 变量或者值(数据)或表达式
+	}
+func 函数名(形参变量名1 类型,形参变量名2 类型,形参变量名3 类型,.../形参变量名1,形参变量名2,... 类型) (返回值参数名 类型){
+			代码体
+	        return
+	}
+func 函数名(形参变量名1 类型,形参变量名2 类型,形参变量名3 类型,.../形参变量名1,形参变量名2,... 类型)(返回值参数名1 类型,返回值参数名2 类型,...){
+				代码体
+		        return
+	}
+
 返回值是值(数据)
 函数名是一个特殊的全局变量 特殊在定义方式不一样
 //返回值函数可以返回多个返回值
@@ -18,12 +39,25 @@ func result(a, b int) int {
 	sum:= a + b
 	return sum  //return 变量    //表示结束函数result并返回变量sum里的值，此时变量sum里的值就是返回值
 }
-func result(a, b int) (sum int) {//sum int其实是var sum int
+func result(a, b int) (int,int) {//多个返回值 必须加括号
+	sum:= a + b
+	sum1 := a-b
+	return sum,sum1  //return 变量    //表示结束函数result并返回变量sum,sum1里的值，此时变量sum,sum1里的值就是返回值
+}
+func result(a, b int) (sum int) {//sum int其实是var sum int   格式为：返回值参数名 类型 的必须加括号
 	sum = a + b
+	return //只写return    //表示结束函数result并返回返回值参数变量的值，此时变量sum里的值就是返回值
+}
+func result(a, b int) (sum int,sum1 int) {
+	sum = a + b
+	sum1 = a-b
 	return //只写return    //表示结束函数result并返回返回值参数变量的值，此时变量sum里的值就是返回值
 }
 func result() int {
 	return "狗子3号"  //return 返回值
+}
+func result()(int,int,string){//多个返回值 必须加括号
+	return 1,2,"狗子"
 }
 func result(a, b int) string {
 	if(a + b>3){
