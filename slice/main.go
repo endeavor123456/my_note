@@ -19,8 +19,8 @@ fmt.Println(a)
 func main() {
 	fmt.Println("ok")
 	/*
-						var slice []int   //定义一个空切片【空切片是对应变量的值为nil(0X0)的切片】 此时变量slice里保存的值为nil(0X0) 此时切片长度为0【因为没有在堆中开辟空间所以长度为0】 容量为0 不能通过slice[0] = 1这样的方式 因为此时切片长度为0，只有长度不为0时才能通过slice[0] = 1这样的方式 此时输出slice[0]同理 此时得用make函数设置长度【就是用make函数在堆中开辟空间，注意：切片使用make函数是必须设置长度，容量可写可不写】 就可以用slice[0] = 1这样的方式了
-						fmt.Println(slice) //
+						var slice []int   //定义一个[]int类型的变量【如果是宽泛的说法变量slice是一个切片类型的变量，如果是说详细了就是[]int类型的，就跟整数类型和int类型之间的关系一样】 此时变量slice里保存的值为nil(0X0) 此时切片长度为0【因为没有在堆中开辟空间所以长度为零】 容量为0 不能通过slice[0] = 1这样的方式 因为此时切片长度为0，只有长度不为0时才能通过slice[0] = 1这样的方式 此时输出slice[0]同理 此时得用make函数设置长度【就是用make函数在堆中开辟空间，注意：切片使用make函数是必须设置长度，容量可写可不写】 就可以用slice[0] = 1这样的方式了
+						fmt.Println(slice) //没有空切片之说
 
 						var slice2 = []int{1, 2, 3, 4, 5}
 						fmt.Println(slice2, len(slice2))
