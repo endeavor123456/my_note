@@ -16,9 +16,9 @@ func main() {
 	fmt.Println(test)       //输出变量test里的数据
 	fmt.Println("------------------------------------")
 	var person = Persons{5, "胡图图"}
-	fmt.Println(person)     //输出此变量里的所有数据
-	fmt.Println(person.age) //执行步骤：第一步：从变量中拿出字段age 第二步：输出字段age里的所有的值
+	fmt.Println(person)     //输出此变量里的数据
+	fmt.Println(person.age) //输出变量person里的字段age里的数据
 	fmt.Println("---------------------------------------------")
-	fmt.Println(&person.name) //执行步骤：首先要注意.的优先级比&的优先级高 第一步：先拿出字段name  第二步：对字段name取地址 第三步：输出字段name的地址
+	fmt.Println(&person.name) //执行步骤：首先要注意.的优先级比&的优先级高 第一步：对person里的字段name取地址 第二步：输出字段name的地址
 	fmt.Printf("%p", &person)
 }
