@@ -104,8 +104,23 @@ func main() {
 		        练习：
 	*/
 	var monsters []map[string]string
-	monsters = make([]map[string]string, 2) //切片如果不设置容量则容量=长度
+	monsters = make([]map[string]string, 2) //切片如果不设置容量则容量==长度
 	if monsters[0] == nil {
-		monsters[0] = make(map[string]string)
+		monsters[0] = make(map[string]string, 2)
+		monsters[0]["name"] = "牛魔王"
+		monsters[0]["age"] = "500"
 	}
+	if monsters[1] == nil {
+		monsters[1] = make(map[string]string, 2)
+		monsters[1]["name"] = "玉兔精"
+		monsters[1]["age"] = "400"
+	}
+	newmonster := map[string]string{
+		"name": "新的妖怪 火云邪神",
+		"age":  "200",
+	}
+	fmt.Printf("%p", monsters)
+
+	monsters = append(monsters, newmonster) //append函数插入的数据的数据类型必须与第一个参数变量【切片类型的变量】的元素的类型相同
+	fmt.Println(monsters)
 }
