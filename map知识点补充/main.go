@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 type Int = int
 
@@ -8,7 +11,7 @@ type Int = int
 //map很多地方都挺怪
 //map对长度不敏感
 func main() {
-	//map的key的类型不能是切片、map、function类型
+	//map变量的key的类型不能是切片、map、function类型
 	/*
 		map变量的定义格式之一，只列出这一个，其他的定义格式就不一一列举了
 		var map名 = make(map[key的类型]value的类型)
@@ -43,21 +46,25 @@ func main() {
 		}
 
 	*/
-	//如果map的某一个key已经存在，则为修改 不存在则为增加  例：cities["no3"]="上海" 如果"no3"这个key已经存在 则该语句为修改 如果不存在则为增加
-	var kong map[string]int //此时没有在堆中开辟空间所以不能往里添加key-value对
-	kong = m                //将变量m的值赋值给变量kong     变量m中存储的值是一个地址  这个地址指向堆中空间
-	fmt.Println(m)
-	fmt.Println(kong)
-	//var m = make(map[string]int)不是空map var kong map[string]int才是 判定切片、map是否为空的标准是看看其变量的值是否为nil
+	/*
+		//如果map变量的某一个key已经存在，则为修改 不存在则为增加  例：cities["no3"]="上海" 如果"no3"这个key已经存在 则该语句为修改 如果不存在则为增加
+		var kong map[string]int //此时没有在堆中开辟空间所以不能往里添加key-value对
+		kong = m                //将变量m的值赋值给变量kong     变量m中存储的值是一个地址  这个地址指向堆中空间
+		fmt.Println(m)
+		fmt.Println(kong)
+		//var m = make(map[string]int)不是空map var kong map[string]int才是 判定切片、map是否为空的标准是看看其变量的值是否为nil
 
-	//map删除key-value对
-	var m5 = map[string]string{
-		"name": "狗子3号",
-		"sex":  "男",
-	}
-	delete(m5, "sex")   //删除key为"sex"的kay-value对
-	delete(m5, "calss") //删除key为"class"的kay-value对 当key为"class"的kay-value对不存在时 delete函数不会进行删除操作，也不会报错
+	*/
+	/*
+		//删除map变量中的key-value对
+		var m5 = map[string]string{
+			"name": "狗子3号",
+			"sex":  "男",
+		}
+		delete(m5, "sex")   //删除key为"sex"的kay-value对
+		delete(m5, "calss") //删除key为"class"的kay-value对 当key为"class"的kay-value对不存在时 delete函数不会进行删除操作，也不会报错
 
+	*/
 	/*	删除map变量所有key-value对
 		方法1：如果我们要删除map变量里的所有key-value，没有一个专门的方法一次性删除多个key-value对 可以遍历一下 逐个删除
 		方法2：使用map变量=make(...),在堆中开辟一个新的空间，让原来的那个空间成为垃圾，被gc回收
@@ -80,19 +87,19 @@ func main() {
 		fmt.Println(d)
 	*/
 	/*
-		//map查找
+		//查找map中的key-value对
 		var d3 = map[string]string{
 			"name": "狗子8号",
 			"addr": "翻斗花园103室",
 		}
-		//map查找第一种写法
+		//查找map中的key-value对的第一种写法
 		val, ok := d3["age"] //如果d3中存在key为"age"的key-value对，ok的值就为true，如果不存在ok的值就为false    ？？？这个地方有些别扭
 		if ok {
 			fmt.Println(`d3中存在key为"age"的key-value对,value为：`, val)
 		} else {
 			fmt.Println("不存在")
 		}
-		//map查找第二种写法
+		//查找map中的key-value对的第二种写法
 		if val, ok := d3["age"]; ok {
 			fmt.Println(`d3中存在key为"age"的key-value对,value为：`, val)
 		} else {
@@ -126,7 +133,20 @@ func main() {
 	*/
 	/*
 	   golang中map变量中的key-value对是无序的，所以在对map for-range遍历的时候也是无序的
-	   对map变量
+	   对map变量中的key-value对排序
+
 
 	*/
+	var m8 = map[string]string{
+		"name": "胡图图",
+		"addr": "翻斗花园",
+	}
+	var key []string
+	for k := range m8 {
+		key = append(key, k)
+	}
+	sort.Strings(key)
+	for _, k := range key {
+		fmt.Println(k, m8[k])
+	}
 }
