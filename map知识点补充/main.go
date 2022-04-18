@@ -121,6 +121,6 @@ func main() {
 	}
 	fmt.Printf("%p", monsters)
 
-	monsters = append(monsters, newmonster) //append函数插入的数据的数据类型必须与第一个参数变量【切片类型的变量】的元素的类型相同
+	monsters = append(monsters, newmonster) //append函数插入的数据的数据类型必须与第一个参数变量/参数值【切片类型的变量】的元素的类型相同
 	fmt.Println(monsters)
 }
