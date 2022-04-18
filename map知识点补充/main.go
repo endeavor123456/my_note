@@ -34,7 +34,7 @@ func main() {
 		fmt.Println(studentMap)
 		fmt.Println(studentMap["stu02"])
 		fmt.Println(studentMap["stu02"]["address"])
-		for k1,v1 := range studentMap{  //使用for-range遍历
+		for k1,v1 := range studentMap{  //遍历 map只能用for-range遍历  不能像切片和数组那样即可以用for-range可以用for
 			fmt.Println("k1=",k1)
 			for k2,v2:=range v1{
 				fmt.Printf("\t k2=%v v2 = %v\n",k2,v2)
@@ -99,4 +99,9 @@ func main() {
 			fmt.Println("不存在")
 		}
 	*/
+	/*
+
+
+
+	 */
 }
