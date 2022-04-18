@@ -146,7 +146,7 @@ func main() {
 		key = append(key, k)
 	}
 	sort.Strings(key)
-	for _, k := range key {
+	for _, k := range key { //for-range 遍历的两个位置的变量分别用来接收不同的数据【这两个变量不用都写上，可以只写一个】 第一个位置的数据不需要变量接收，如果不放匿名变量顺序会乱
 		fmt.Println(k, m8[k])
 	}
 }
