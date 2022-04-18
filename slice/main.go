@@ -81,7 +81,7 @@ func main() {
 						//append函数还可以和并切片
 						sliceC := []string{"php","java"}
 						sliceD := []string{"nodejs","go"}
-						sliceC = append(sliceC,sliceD...)   //append的第二个参数不能是切片名，这个地方是把sliceD打散 追加到sliceC里面的 和sliceC = append(sliceC,"nodejs","go")等价
+						sliceC = append(sliceC,sliceD...)   //append函数插入的数据的数据类型必须与第一个实参【切片类型的变量/数据】的元素/元素的值的类型相同，这个地方是把sliceD打散 追加到sliceC里面的 和sliceC = append(sliceC,"nodejs","go")等价
 						fmt.Println(sliceC)
 
 						//切片的扩容策略【对于切片的扩容策略只需了解即可】

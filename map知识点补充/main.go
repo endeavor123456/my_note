@@ -100,27 +100,33 @@ func main() {
 		}
 	*/
 	/*
-				//map类型的切片  就如 int类型、int32类型、int64类型、.....统称为整数类型一样 map[string]string类型、map[int]string类型、....统称为map类型
-		        练习：
-	*/
-	var monsters []map[string]string
-	monsters = make([]map[string]string, 2) //切片如果不设置容量则容量==长度
-	if monsters[0] == nil {
-		monsters[0] = make(map[string]string, 2)
-		monsters[0]["name"] = "牛魔王"
-		monsters[0]["age"] = "500"
-	}
-	if monsters[1] == nil {
-		monsters[1] = make(map[string]string, 2)
-		monsters[1]["name"] = "玉兔精"
-		monsters[1]["age"] = "400"
-	}
-	newmonster := map[string]string{
-		"name": "新的妖怪 火云邪神",
-		"age":  "200",
-	}
-	fmt.Printf("%p", monsters)
+		map类型的切片  就如 int类型、int32类型、int64类型、.....统称为整数类型一样 map[string]string类型、map[int]string类型、....统称为map类型
+		练习：
 
-	monsters = append(monsters, newmonster) //append函数插入的数据的数据类型必须与第一个参数变量/参数值【切片类型的变量】的元素的类型相同
-	fmt.Println(monsters)
+		var monsters []map[string]string
+		monsters = make([]map[string]string, 2) //切片如果不设置容量则容量==长度
+		if monsters[0] == nil {
+			monsters[0] = make(map[string]string, 2)
+			monsters[0]["name"] = "牛魔王"
+			monsters[0]["age"] = "500"
+		}
+		if monsters[1] == nil {
+			monsters[1] = make(map[string]string, 2)
+			monsters[1]["name"] = "玉兔精"
+			monsters[1]["age"] = "400"
+		}
+		newmonster := map[string]string{
+			"name": "新的妖怪 火云邪神",
+			"age":  "200",
+		}
+		fmt.Printf("%p", monsters)
+
+		monsters = append(monsters, newmonster) //append函数插入的数据的数据类型必须与第一个实参【切片类型的变量/数据】的元素/元素的值的类型相同
+		fmt.Println(monsters)
+	*/
+	/*
+	   golang中map变量中的key-value对是无序的，所以在对map for-range遍历的时候也是无序的
+	   对map变量
+
+	*/
 }
