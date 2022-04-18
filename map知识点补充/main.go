@@ -100,8 +100,12 @@ func main() {
 		}
 	*/
 	/*
-
-
-
-	 */
+				//map类型的切片  就如 int类型、int32类型、int64类型、.....统称为整数类型一样 map[string]string类型、map[int]string类型、....统称为map类型
+		        练习：
+	*/
+	var monsters []map[string]string
+	monsters = make([]map[string]string, 2) //切片如果不设置容量则容量=长度
+	if monsters[0] == nil {
+		monsters[0] = make(map[string]string)
+	}
 }

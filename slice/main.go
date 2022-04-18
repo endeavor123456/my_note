@@ -57,7 +57,7 @@ func main() {
 						fmt.Println(b)
 							.........
 				        //通过make函数定义切片  make([]T,size,cap)
-						var sliceA = make([]int,4,8)   //长度为4 容量为8的空切片 对切片使用make函数时size必须写，cap可省略 如果是对map使用make函数 size和cap都可省略
+						var sliceA = make([]int,4,8)   //长度为4 容量为8的空切片 对切片使用make函数时size必须写，cap可省略【切片如果不设置容量，容量==长度】 如果是对map使用make函数 size和cap都可省略
 						fmt.Println(sliceA)    //会输出默认值
 						sliceA[0] = 10
 						sliceA[1] = 12
