@@ -38,9 +38,10 @@ func main() {
 		fmt.Println(arr5)
 	*/
 	/*
-			//遍历数组中的元素的值
+			//遍历数组中的元素  遍历即把元素一个个的拿出来
 			//方法一,使用for语句遍历：
 			var arr1 = [3]int{23, 34, 5}
+			//遍历并输出遍历出来的元素的值
 			for i := 0; i < len(arr1); i++ {
 				fmt.Println(arr1[i])
 			}

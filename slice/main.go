@@ -130,10 +130,11 @@ func main() {
 		fmt.Println("容量为", cap(e))
 	*/
 	/*
-		//切片的循环遍历
+		//切片的循环遍历 遍历即把元素一个个的拿出来
 		var strSlice = []string{"济南", "北京", "上海", "南京", "深圳"}
+		//遍历并输出遍历出来的元素的值
 		for i := 0; i < len(strSlice); i++ {
-			fmt.Println(i, strSlice[i])
+			fmt.Println(strSlice[i])
 		}
 		for i, v := range strSlice {
 			fmt.Println(i, v)
@@ -171,7 +172,7 @@ func main() {
 	*/
 	/*
 				使用sort包进行升序排序
-				对于int、float64和string数组变量或是切片的排序，go分别提供了sort.Ints()、sort.Float64s()和sort.Strings()函数，默认都是从小到大排列
+				对于int、float64和string数组变量中的元素或是切片中的元素的排序，go分别提供了sort.Ints()、sort.Float64s()和sort.Strings()函数，默认都是从小到大排列
 
 			intList := []int{2, 4, 3, 5, 7, 6, 9, 8, 1, 0}
 			floatList := []float64{4.2, 5.9, 12.4, 10.2, 50.7, 99.9, 31.4, 27.81828, 3.14}
