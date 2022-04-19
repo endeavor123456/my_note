@@ -173,7 +173,7 @@ func main() {
 	/*
 		                排序原理：---- ---------
 						使用sort包进行升序排序
-						对于int、float64和string切片的排序，go分别提供了sort.Ints()、sort.Float64s()和sort.Strings()函数，都是从小到大排列
+						对于int、float64和string切片的排序，go分别提供了sort.Ints()、sort.Float64s()和sort.Strings()函数，但这几个函数不能对数组排序，都是从小到大排列
 
 					intList := []int{2, 4, 3, 5, 7, 6, 9, 8, 1, 0}
 					floatList := []float64{4.2, 5.9, 12.4, 10.2, 50.7, 99.9, 31.4, 27.81828, 3.14}

@@ -169,6 +169,9 @@ func main() {
 
 	/*
 		数组是值类型,不能直接排序，必须转为切片
+		 排序原理：---- ---------
+		使用sort包进行升序排序
+		对于int、float64和string切片的排序，go分别提供了sort.Ints()、sort.Float64s()和sort.Strings()函数，但这几个函数不能对数组排序
 	*/
 
 }
