@@ -103,6 +103,12 @@ func main() {
 						a = append(a[:2], a[3:]...)
 						fmt.Println(a) //输出[1,2,4,5,6,7]
 
+						//删除切片中的所有元素方法
+						delslice := []int{1,2,3,4,5,6}
+						fmt.Println(delslice)
+						delslice =delslice[0:0]
+						fmt.Println(delslice)
+
 						//利用切片修改字符串数据
 						s1 := "big"
 						byteStr := []byte(s1)
