@@ -39,7 +39,7 @@ func main() {
 						slice5 := []int{0: 1, 1: 2, 2: 3}
 						fmt.Println(slice5)
 
-						//基于数组变量定义切片
+						//基于数组变量定义切片(看看下面的讲解)
 						a := [5]int{55, 56, 57, 58, 59}
 						b := a[:] //获取数组变量里的所有的元素的值
 						fmt.Println(b)
@@ -51,7 +51,7 @@ func main() {
 						e := a[:3] //获取数组变量下标为3的元素前面的元素的值
 						fmt.Println(e)
 
-						//基于切片定义切片
+						//基于切片定义切片(看看下面的讲解)
 						a := []string{"北京", "上海", "广州", "深圳", "成都", "重庆"}
 						b := a[1:] //从切片下标为1的元素开始获取全部
 						fmt.Println(b)
@@ -106,7 +106,7 @@ func main() {
 						//删除切片中的所有元素方法
 						delslice := []int{1,2,3,4,5,6}
 						fmt.Println(delslice)
-						delslice =delslice[0:0]
+						delslice = delslice[0:0]//删除切片中的所有元素
 						fmt.Println(delslice)
 
 						//利用切片修改字符串数据
@@ -114,6 +114,29 @@ func main() {
 						byteStr := []byte(s1)
 						byteStr[0] = 'p'
 						fmt.Println(string(byteStr))
+
+						//--------------这就是提到的“看看下面的讲解”--------------------------------------------------------
+						slice := []int{1, 2, 3, 4, 5}
+						fmt.Println(slice)
+						slice1 := slice[0:2] //注意不要认为是：slice1 := []int{1,2}   其实slice1里保存的地址是指向slice变量里存储的地址指向的空间的某一个或几个元素
+						slice1[1] = 8
+						fmt.Printf("%p", slice)
+						fmt.Println()
+						fmt.Printf("%p", slice1)
+						fmt.Println("----------------------------------------")
+						var slice5 = []int{1, 2, 3, 4, 5, 6}
+						slice5 = slice5[0:0]//清空所有元素
+						fmt.Println(slice)
+						//还有一点要注意 切片名里保存的地址和该地址指向的堆中空间的第一个元素的地址相同 重合了
+						var array = [5]int{1, 2, 3, 4, 5}
+						fmt.Println(array)
+						var slice3 = array[0:2]
+						fmt.Println(slice3)
+						array[0] = 10
+						fmt.Println(array)
+						fmt.Println(slice3)
+						//数组变量的地址和数组元素的地址相同 也是重合
+						//--------------这就是提到的“看看下面的讲解”--------------------------------------------------------
 
 	*/
 
