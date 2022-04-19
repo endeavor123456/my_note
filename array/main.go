@@ -177,9 +177,11 @@ func main() {
 			fmt.Println(intList)
 			fmt.Println(floatList)
 			fmt.Println(strList)
+
 			sort.Ints(intList)
 			sort.Float64s(floatList)
 			sort.Strings(strList)
+
 			fmt.Println("排序后")
 			fmt.Println(intList)
 			fmt.Println(floatList)
@@ -193,9 +195,11 @@ func main() {
 		fmt.Println(intList1)
 		fmt.Println(floatList1)
 		fmt.Println(strList1)
+
 		sort.Sort(sort.Reverse(sort.IntSlice(intList1)))
 		sort.Sort(sort.Reverse(sort.Float64Slice(floatList1)))
 		sort.Sort(sort.Reverse(sort.StringSlice(strList1)))
+
 		fmt.Println("排序后")
 		fmt.Println(intList1)
 		fmt.Println(floatList1)
