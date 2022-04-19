@@ -39,16 +39,16 @@ func main() {
 						slice5 := []int{0: 1, 1: 2, 2: 3}
 						fmt.Println(slice5)
 
-						//基于数组定义切片
+						//基于数组变量定义切片
 						a := [5]int{55, 56, 57, 58, 59}
-						b := a[:] //获取数组里的所有的元素的值
+						b := a[:] //获取数组变量里的所有的元素的值
 						fmt.Println(b)
 
-						c := a[1:4] //获取数组里的指定的元素的值   左包右不包
+						c := a[1:4] //获取数组变量里的指定的元素的值   左包右不包
 						fmt.Println(c)
-						d := a[2:] //从数组索引(下标)为2的元素开始获取全部
+						d := a[2:] //从数组变量索引(下标)为2的元素开始获取全部
 						fmt.Println(d)
-						e := a[:3] //获取数组下标为3的元素前面的元素的值
+						e := a[:3] //获取数组变量下标为3的元素前面的元素的值
 						fmt.Println(e)
 
 						//基于切片定义切片
@@ -93,7 +93,7 @@ func main() {
 						//copy()函数
 						sliceA := []int{1, 2, 3, 4, 5}
 						sliceB := make([]int, 4, 4)
-						copy(sliceB, sliceA) //copy函数的作用是让身为引用类型的切片也可以进行类似于值传递的操作
+						copy(sliceB, sliceA) //copy函数的作用是让身为引用类型的切片变量也可以进行类似于值传递的操作
 						sliceB[0] = 11
 						fmt.Println(sliceA)
 						fmt.Println(sliceB)
@@ -103,7 +103,7 @@ func main() {
 						a = append(a[:2], a[3:]...)
 						fmt.Println(a) //输出[1,2,4,5,6,7]
 
-						//利用切片修改字符串
+						//利用切片修改字符串数据
 						s1 := "big"
 						byteStr := []byte(s1)
 						byteStr[0] = 'p'
@@ -117,7 +117,7 @@ func main() {
 		//切片的容量需要重视
 		//切片的容量是从它的第一个元素开始数到其底层切片元素末尾（包含末尾）的元素个数
 		//以b := s[1:3]为例 切片b的第一个元素是下标为1的元素 此元素到切片s的末尾的元素的个数为5
-		//切片变量也是切片名
+		//切片变量就是切片名
 		s := []int{2, 3, 5, 7, 11, 13}  //长度为6 容量为6
 		fmt.Println("长度为", len(s), "容量为", cap(s))
 
@@ -171,7 +171,7 @@ func main() {
 	*/
 	/*
 				使用sort包进行升序排序
-				对于int、float64和string数组或是切片的排序，go分别提供了sort.Ints()、sort.Float64s()和sort.Strings()函数，默认都是从小到大排列
+				对于int、float64和string数组变量或是切片的排序，go分别提供了sort.Ints()、sort.Float64s()和sort.Strings()函数，默认都是从小到大排列
 
 			intList := []int{2, 4, 3, 5, 7, 6, 9, 8, 1, 0}
 			floatList := []float64{4.2, 5.9, 12.4, 10.2, 50.7, 99.9, 31.4, 27.81828, 3.14}
