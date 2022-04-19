@@ -168,43 +168,7 @@ func main() {
 	*/
 
 	/*
-				使用sort包进行升序排序
-				对于int、float64和string数组变量中的元素或是切片中的元素排序，go分别提供了sort.Ints()、sort.Float64s()和sort.Strings()函数，默认都是从小到大排列
-
-			intList := [...]int{2, 4, 3, 5, 7, 6, 9, 8, 1, 0}
-			floatList := [...]float64{4.2, 5.9, 12.4, 10.2, 50.7, 99.9, 31.4, 27.81828, 3.14}
-			strList := [...]string{"a", "c", "b", "z", "x", "w", "y", "d", "f", "i"}
-			fmt.Println("排序前")
-			fmt.Println(intList)
-			fmt.Println(floatList)
-			fmt.Println(strList)
-
-			sort.Ints(intList)
-			sort.Float64s(floatList)
-			sort.Strings(strList)
-
-			fmt.Println("排序后")
-			fmt.Println(intList)
-			fmt.Println(floatList)
-			fmt.Println(strList)
-
-		// 使用sort包进行降序排序
-		intList1 := [...]int{2, 4, 3, 5, 7, 6, 9, 8, 1, 0}
-		floatList1 := [...]float64{4.2, 5.9, 12.4, 10.2, 50.7, 99.9, 31.4, 27.81828, 3.14}
-		strList1 := [...]string{"a", "c", "b", "z", "x", "w", "y", "d", "f", "i"}
-		fmt.Println("排序前")
-		fmt.Println(intList1)
-		fmt.Println(floatList1)
-		fmt.Println(strList1)
-
-		sort.Sort(sort.Reverse(sort.IntSlice(intList1)))
-		sort.Sort(sort.Reverse(sort.Float64Slice(floatList1)))
-		sort.Sort(sort.Reverse(sort.StringSlice(strList1)))
-
-		fmt.Println("排序后")
-		fmt.Println(intList1)
-		fmt.Println(floatList1)
-		fmt.Println(strList1)
+		数组是值类型,不能直接排序，必须转为切片
 	*/
 
 }
