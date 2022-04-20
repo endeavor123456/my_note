@@ -6,9 +6,22 @@ type Stu struct {
 	Address string
 }
 
+func modifyUser(users map[string]map[string]string, name string, nickname string) {
+	//先判断是否有
+	//一般使用if v,ok := users[name];ok{....}   因为此处map的value是map类型的数据 所以此处还可因写成：if users[name] != nil{....}
+	if users[name] != nil {
+		users[name]["pwd"] = "888888"
+	} else {
+		users[name] = make(map[string]string)
+		users[name]["pwd"] = "888888"
+		users[name]["nickname"] = nickname + name
+	}
+}
+
 //map知识点补充
 //map很多地方都挺怪
 //map对长度不敏感
+//map的key具有唯一性
 func main() {
 	//map变量的key的类型不能是切片、map、function类型
 	/*
@@ -153,8 +166,22 @@ func main() {
 			fmt.Println(k, m8[k])
 		}
 	*/
+
 	/*
-		map细节
+		//map课堂练习：
+		如果用户存在就将其密码修改为“888888”,如果不存在就增加这个用户信息(用户信息包括用户名、昵称、密码)
+		使用函数实现
+		users := make(map[string]map[string]string)
+		users["狗子1号"] = make(map[string]string)
+		users["狗子1号"]["pwd"] = "999999"
+		users["狗子1号"]["nickname"] = "胡图图"
+		modifyUser(users, "狗子2号", "胡英俊")
+		modifyUser(users, "狗子3号", "张小丽")
+		fmt.Println(users)
+
+	*/
+
+	/*
 		map的value也经常使用结构体类型 更适合管理复杂的数据(比前面的value是map类型的更好)
 		students := make(map[string]Stu)
 		stu1 := Stu{"tom", 18, "北京"}
