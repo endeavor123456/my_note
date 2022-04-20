@@ -1,11 +1,10 @@
 package main
 
-import (
-	"fmt"
-	"sort"
-)
-
-type Int = int
+type Stu struct {
+	Name    string
+	Age     int
+	Address string
+}
 
 //map知识点补充
 //map很多地方都挺怪
@@ -16,9 +15,11 @@ func main() {
 		map变量的定义格式之一，只列出这一个，其他的定义格式就不一一列举了
 		var map名 = make(map[key的类型]value的类型)
 	*/
-	//map、切片类型的比较 详见golang中的比较注意事项.md
-	var m = make(map[string]int) //map变量中的key-value对是无序的
-	fmt.Println(m)
+	/*
+		//map、切片类型的比较 详见golang中的比较注意事项.md
+		var m = make(map[string]int) //map变量中的key-value对是无序的
+		fmt.Println(m)
+	*/
 	/*
 		   课堂练习
 		   存放3个学生的信息，每个学生有max和sex信息，并遍历出来
@@ -137,16 +138,37 @@ func main() {
 
 
 	*/
-	var m8 = map[string]string{
-		"name": "胡图图",
-		"addr": "翻斗花园",
-	}
-	var key []string
-	for k := range m8 {
-		key = append(key, k)
-	}
-	sort.Strings(key)
-	for _, k := range key { //for-range 遍历的两个位置的变量分别用来接收不同的数据【这两个变量不用都写上，可以只写一个】 第一个位置的数据不需要变量接收，如果不放匿名变量顺序会乱
-		fmt.Println(k, m8[k])
-	}
+	/*
+		//map的排序有点不一样，是按照key来对key-value对排序
+		var m8 = map[string]string{
+			"name": "胡图图",
+			"addr": "翻斗花园",
+		}
+		var key []string
+		for k := range m8 {
+			key = append(key, k)
+		}
+		sort.Strings(key)
+		for _, k := range key { //for-range 遍历的两个位置的变量分别用来接收不同的数据【这两个变量不用都写上，可以只写一个】 第一个位置的数据不需要变量接收，如果不放匿名变量顺序会乱
+			fmt.Println(k, m8[k])
+		}
+	*/
+	/*
+		map细节
+		map的value也经常使用结构体类型 更适合管理复杂的数据(比前面的value是map类型的更好)
+		students := make(map[string]Stu)
+		stu1 := Stu{"tom", 18, "北京"}
+		stu2 := Stu{"mary", 18, "上海"}
+		students["no1"] = stu1
+		students["no2"] = stu2
+		fmt.Println(students)
+
+		for k, v := range students {
+			fmt.Printf("学生的编号是%v\n", k)
+			fmt.Printf("学生的名字是%v\n", v.Name)
+			fmt.Printf("学生的编号是%v\n", v.Age)
+			fmt.Printf("学生的编号是%v\n", v.Address)
+			fmt.Println()
+		}
+	*/
 }
