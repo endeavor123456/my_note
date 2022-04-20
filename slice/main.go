@@ -139,6 +139,15 @@ func main() {
 						//--------------这就是提到的“看看下面的讲解”--------------------------------------------------------
 
 	*/
+	/*
+		a, b, c := 1, 2, 3
+		var slice = []int{a, b, c, a + b, arrayelements(1, 2), arrayelements1()} //将a,b,c的值，a+b的结果，函数arrayelements，arrayelements1的返回值分别赋值到对应的元素中
+		fmt.Println(slice)
+		fmt.Println([]int{a, b, c, a + b, arrayelements(1, 2), arrayelements1()})
+		fmt.Println([]int{a, b, c, a + b, arrayelements(1, 2), arrayelements1()}[0]) //输出切片数据里保存在第一个元素的值
+		var slice1 = []int{a, b, c, a + b, arrayelements(1, 2), arrayelements1()} //将a,b,c的值，a+b的结果，函数arrayelements，arrayelements1的返回值分别赋值到对应的元素中
+		fmt.Println(slice1)
+	*/
 
 	/*
 		//关于切片的长度和容量

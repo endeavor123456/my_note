@@ -2,6 +2,15 @@ package main
 
 import "fmt"
 
+func arrayelements(a, b int) int {
+	return a + b
+}
+func arrayelements1() int {
+	var a int = 10
+	var b int = 20
+	return a + b
+}
+
 //数组类型是值类型
 //虽然数组类型和切片类型不是一种类型 但二者在使用上有非常多的相同之处
 func main() {
@@ -172,6 +181,15 @@ func main() {
 		 排序原理：---- ---------
 		使用sort包进行升序排序
 		对于int、float64和string切片的排序，go分别提供了sort.Ints()、sort.Float64s()和sort.Strings()函数，但这几个函数不能对数组排序
+	*/
+	/*
+		a, b, c := 1, 2, 3
+		var array = [7]int{a, b, c, a + b, arrayelements(1, 2), arrayelements1()} //将a,b,c的值，a+b的结果，函数arrayelements，arrayelements1的返回值分别赋值到对应的元素中
+		fmt.Println(array)
+		fmt.Println([7]int{a, b, c, a + b, arrayelements(1, 2), arrayelements1()})
+		fmt.Println([7]int{a, b, c, a + b, arrayelements(1, 2), arrayelements1()}[0]) //输出数组数据里保存在第一个元素的值
+		var array1 = [10]int{1,2,3,a, b, c, a + b, arrayelements(1, 2), arrayelements1()}
+		fmt.Println(array1)
 	*/
 
 }
