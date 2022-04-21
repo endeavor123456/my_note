@@ -29,7 +29,7 @@ init 函数通常被用来：
 四、导入包不要出现循环依赖，否则会导致报错
 五、init不应该依赖任何在main函数里定义的变量，因为init函数的执行顺序是在main函数之前的
 六、init函数中也可以启动goroutine，也就是在初始化的同时启动新的goroutine，这并不会影响初始化顺序
-七、不要依赖init函数执行的顺序
+七、尽量不要依赖init函数执行的顺序
 八、无论包被导入多少次，init函数只能被调用一次，也就是执行一次
 _ "github.com/go-sql-driver/mysql"和"github.com/go-sql-driver/mysql"mysql包被导入了两次 而只里面的init函数只会执行一次 init函数不会因为其所在的包被导入两次就执行两次
 九、不同包的init函数按照包导入的顺序来执行
