@@ -12,7 +12,7 @@ func demo2(n int) {
 	s *= n
 	demo2(n - 1)
 }
-func main() {
+func main13() {
 	demo2(5)
 	fmt.Println(s)
 }
